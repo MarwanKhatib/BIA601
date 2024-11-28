@@ -55,6 +55,10 @@ class RunVRPAlgorithm(APIView):
 
             logging.debug(f"Best route: {best_route}, Total distance: {total_distance}")
 
+            # # Clean up: delete all locations and the vehicle
+            # locations.delete()
+            # logging.debug("Locations deleted.")
+
             return Response({
                 "best_route": best_route,
                 "total_distance": total_distance
